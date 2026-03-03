@@ -76,7 +76,7 @@ async def get_shipping_charge(
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"error": "Internal Server Error", "message": "An unexpected error occurred"}
+            detail={"error": "Internal Server Error", "message": f"An unexpected error occurred: {str(e)}"}
         )
 
 
@@ -146,5 +146,5 @@ async def calculate_shipping_charges(
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"error": "Internal Server Error", "message": "An unexpected error occurred"}
+            detail={"error": "Internal Server Error", "message": f"An unexpected error occurred: {str(e)}"}
         )

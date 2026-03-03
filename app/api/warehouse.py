@@ -59,5 +59,5 @@ async def get_nearest_warehouse(
     except Exception as e:
         raise HTTPException(
             status_code=500,
-            detail={"error": "Internal Server Error", "message": "An unexpected error occurred"}
+            detail={"error": "Internal Server Error", "message": f"An unexpected error occurred: {str(e)}"}
         )
