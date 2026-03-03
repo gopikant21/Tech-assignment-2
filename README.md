@@ -49,13 +49,33 @@ app/
 
 ## 🚀 Quick Start
 
-### 1. Install Dependencies
+### 1. Create Virtual Environment
+
+```bash
+python -m venv .venv
+```
+
+### 2. Activate Virtual Environment
+
+**Windows:**
+
+```bash
+.venv\Scripts\activate
+```
+
+**macOS/Linux:**
+
+```bash
+source .venv/bin/activate
+```
+
+### 3. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 2. Configure Environment
+### 4. Configure Environment
 
 Update `.env` file with your MongoDB Atlas connection string:
 
@@ -64,19 +84,19 @@ MONGODB_URL="mongodb+srv://username:password@cluster.mongodb.net/"
 DATABASE_NAME="ecommerce_shipping"
 ```
 
-### 3. Seed Database
+### 5. Seed Database
 
 ```bash
 python seed_data.py
 ```
 
-### 4. Start Application
+### 6. Start Application
 
 ```bash
 uvicorn app.main:app --reload
 ```
 
-### 5. Access API Documentation
+### 7. Access API Documentation
 
 - Swagger UI: http://localhost:8000/docs
 - ReDoc: http://localhost:8000/redoc
