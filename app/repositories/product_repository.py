@@ -29,7 +29,7 @@ class ProductRepository(BaseRepository[Product]):
             "seller_id": ObjectId(entity.seller_id),
             "price": entity.price,
             "weight": entity.weight,
-            "dimensions": entity.dimensions.dict(),
+            "dimensions": entity.dimensions.model_dump(),
         }
         if entity.id:
             doc["_id"] = ObjectId(entity.id)

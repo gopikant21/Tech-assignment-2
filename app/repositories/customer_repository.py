@@ -25,7 +25,7 @@ class CustomerRepository(BaseRepository[Customer]):
         doc = {
             "name": entity.name,
             "phone": entity.phone,
-            "location": entity.location.dict(),
+            "location": entity.location.model_dump(),
         }
         if entity.id:
             doc["_id"] = ObjectId(entity.id)

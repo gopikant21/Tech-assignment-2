@@ -19,7 +19,7 @@ class SellerRepository(BaseRepository[Seller]):
 
     def _to_document(self, entity: Seller) -> dict:
         """Convert Seller entity to MongoDB document"""
-        doc = {"name": entity.name, "location": entity.location.dict()}
+        doc = {"name": entity.name, "location": entity.location.model_dump()}
         if entity.id:
             doc["_id"] = ObjectId(entity.id)
         return doc
